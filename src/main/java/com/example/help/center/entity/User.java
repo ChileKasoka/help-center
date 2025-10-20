@@ -23,7 +23,9 @@ public class User implements UserDetails {
     @Column(nullable = false)
     private UserType userType;
 
-    // Getters and setters...
+    @ManyToOne
+    @JoinColumn(name = "company_id")
+    private Company company;
 
     // Implement UserDetails methods
     @Override

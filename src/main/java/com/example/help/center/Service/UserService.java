@@ -30,7 +30,7 @@ public class UserService {
                 .password(passwordEncoder.encode(password))
                 .userType(userType)
                 .build();
-        userRepository.save(user);
+        userRepository.insert(user);
     }
 
     // Login method
@@ -45,7 +45,7 @@ public class UserService {
     }
 
     public Optional<User> findByUsername(String username) {
-        Optional<User> user = userRepository.findByUsername(username);
+        Optional<User> user = Optional.ofNullable(userRepository.findByUsername(username));
         if (user == null) {
             throw new RuntimeException("User not found");
         }
