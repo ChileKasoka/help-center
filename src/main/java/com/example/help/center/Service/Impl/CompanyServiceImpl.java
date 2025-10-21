@@ -8,6 +8,7 @@ import com.example.help.center.Service.CompanyService;
 import com.example.help.center.entity.Company;
 
 import java.util.List;
+import java.util.Optional;
 
 @Service
 @Transactional
@@ -26,7 +27,7 @@ public class CompanyServiceImpl implements CompanyService {
     }
 
     @Override
-    public Company getCompanyById(Long id) {
+    public Optional<Company> getCompanyById(Long id) {
         return mapper.findById(id);
     }
 

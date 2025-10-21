@@ -1,7 +1,9 @@
 package com.example.help.center.entity;
 import jakarta.persistence.*;
+import lombok.Builder;
 import lombok.Data;
 
+@Builder
 @Data
 @Entity
 @Table(name = "cleaners")
@@ -10,6 +12,7 @@ public class Cleaner {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
+    private Long userId;
     private String f_name;
     private String l_name;
     private String phone;
@@ -21,6 +24,7 @@ public class Cleaner {
     @JoinColumn(name = "company_id")
     private Company company;
 
+    @Builder.Default
     private Boolean isAvailable = true;
 }
 

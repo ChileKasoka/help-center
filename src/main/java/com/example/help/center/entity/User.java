@@ -2,12 +2,14 @@ package com.example.help.center.entity;
 
 import jakarta.persistence.*;
 import lombok.Builder;
+import lombok.Data;
 
 import org.springframework.security.core.userdetails.UserDetails;
 import java.util.Collection;
 import org.springframework.security.core.GrantedAuthority;
 
 @Builder
+@Data
 @Entity
 @Table(name = "users")  // optional: specify table name
 public class User implements UserDetails {

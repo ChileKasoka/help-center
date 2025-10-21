@@ -3,6 +3,7 @@ import com.example.help.center.entity.Company;
 import org.apache.ibatis.annotations.*;
 
 import java.util.List;
+import java.util.Optional;
 
 @Mapper
 public interface CompanyRepository {
@@ -16,7 +17,7 @@ public interface CompanyRepository {
     void insert(Company company);
 
     @Select("SELECT * FROM companies WHERE id = #{id}")
-    Company findById(Long id);
+    Optional<Company> findById(Long id);
 
     @Select("SELECT * FROM companies")
     List<Company> findAll();
