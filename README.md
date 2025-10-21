@@ -117,7 +117,7 @@ go run main.go
 The backend runs on:
 👉 http://localhost:8080
 
-Frontend Setup (Vue.js)
+Frontend Setup (React js)
 
 Navigate to the frontend folder
 
